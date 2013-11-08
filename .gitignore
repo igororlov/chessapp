@@ -1,6 +1,10 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+/target
+/.classpath
+/.project
+/.settings
+/local
+/lucene
+/.checkstyle
+/.springBeans
+/.apt_generated
+.DS_Store
