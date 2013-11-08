@@ -6,13 +6,20 @@
   <artifactId>vitapp</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>VitApp Maven Webapp</name>
+  <name>Vit Application</name>
   
   <properties>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<warName>vitapp</warName>
+  	
+  	<spring.version>3.2.4.RELEASE</spring.version>
+    <spring-security.version>3.1.4.RELEASE</spring-security.version>
+    <jstl.version>1.2</jstl.version>
+    <jackson.version>1.9.10</jackson.version>
   </properties>
   
   <dependencies>
+  	<!-- JUnit. -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -20,24 +27,100 @@
       <scope>test</scope>
     </dependency>
     
+    <!-- Spring. -->
+    <dependency>
+  	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-core</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>
+	
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-oxm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    
+    <!-- Spring Security -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-core</artifactId>
+      <version>${spring-security.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>${spring-security.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-taglibs</artifactId>
+      <version>${spring-security.version}</version>
+    </dependency>
+    
+    <!-- jstl -->
+    <dependency>
+	  <groupId>jstl</groupId>
+	  <artifactId>jstl</artifactId>
+	  <version>${jstl.version}</version>
+	</dependency>
+	
+	<!-- Jackson -->
+	<dependency>
+	  <groupId>org.codehaus.jackson</groupId>
+	  <artifactId>jackson-mapper-asl</artifactId>
+	  <version>${jackson.version}</version>
+	</dependency>
+	
+	<!-- need this for @Configuration -->
+	<dependency>
+	  <groupId>cglib</groupId>
+	  <artifactId>cglib</artifactId>
+	  <version>2.2.2</version>
+	</dependency>
   </dependencies>
   
   <build>
     <finalName>vitapp</finalName>
 	<pluginManagement>
 		<plugins>
-			<plugin>
-			  <groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.1</version>
-				<configuration>
-				  <port>8080</port>
-				  <path>/vitapp</path>
-				  <systemProperties>
-					<environment>dev</environment>
-				  </systemProperties>
-				</configuration>
-	    	</plugin>
+		  <plugin>
+		    <groupId>org.apache.tomcat.maven</groupId>
+		  	  <artifactId>tomcat7-maven-plugin</artifactId>
+			  <version>2.1</version>
+			  <configuration>
+			    <port>8080</port>
+			    <path>/vitapp</path>
+			    <systemProperties>
+				  <environment>dev</environment>
+			    </systemProperties>
+			  </configuration>
+    	  </plugin>
 		</plugins>
 	</pluginManagement>
   </build>
