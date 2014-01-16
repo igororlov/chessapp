@@ -4,7 +4,7 @@
 	      http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	      version="2.5">	
  
-	<display-name>Vit Application</display-name>
+	<display-name>Test Application</display-name>
  
 	<servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
