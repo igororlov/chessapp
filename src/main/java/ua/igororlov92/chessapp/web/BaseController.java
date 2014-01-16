@@ -1,4 +1,4 @@
-package ua.chessapp.web;
+package ua.igororlov92.chessapp.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
