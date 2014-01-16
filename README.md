@@ -1,4 +1,3 @@
-vitapp
-======
+chessapp
 
-Spring MVC webapp for VIT Company. www.vit.ua
+Spring MVC Application for event management
