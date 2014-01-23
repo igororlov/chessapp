@@ -188,6 +188,12 @@
 	  <version>9.1-901.jdbc4</version>
     </dependency>
             
+    <!-- Sitemesh -->
+	<dependency>
+	  <groupId>opensymphony</groupId>
+	  <artifactId>sitemesh</artifactId>
+	  <version>2.4.2</version>
+	</dependency>
 	
   </dependencies>
   
