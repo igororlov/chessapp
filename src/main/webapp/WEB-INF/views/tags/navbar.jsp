@@ -7,16 +7,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Spring Bootstrap 3</a>
+        <a class="navbar-brand" href="<c:url value="/" />">Chess event</a>
         </div>
         <div class="navbar-collapse collapse">  
           <ul class="nav navbar-nav">
             <li class="active"><a href="<c:url value="/" />">Home</a></li>
-            <li><a href="<c:url value="/getstarted" />">Get started</a></li>
-            <li><a href="<c:url value="/errors-validations" />">Errors &amp; Validations</a></li>
-            <li><a href="<c:url value="/form" />">Forms</a></li>
-            <li><a href="<c:url value="/fileupload" />">File Upload</a></li>
-            <li><a href="<c:url value="/misc" />">Misc</a></li>
+            <li><a href="<c:url value="/events" />">Events</a></li>
+            <li><a href="<c:url value="/users" />">Users</a></li>
+            <li><a href="<c:url value="/contacts" />">Contacts</a></li>
           </ul>
         </div>   			      		 
   </div>
