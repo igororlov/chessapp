@@ -12,8 +12,7 @@
   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"
         rel="stylesheet"  type="text/css" />
   <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet"  type="text/css" />
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">  
 </head>
 
 <body>

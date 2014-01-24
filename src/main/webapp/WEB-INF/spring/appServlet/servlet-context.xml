@@ -7,6 +7,7 @@
   xmlns:p="http://www.springframework.org/schema/p" 
   xmlns:cache="http://www.springframework.org/schema/cache" 
   xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:jpa="http://www.springframework.org/schema/data/jpa"
   
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
                 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
@@ -15,10 +16,12 @@
                 http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
                 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
     
-    <!-- Enable @Controller annotation support -->
+  <context:property-placeholder location="classpath*:META-INF/config.properties" />  
+    
+  <!-- Enable @Controller annotation support -->
 	<mvc:annotation-driven />
  
-    <!-- Scan classpath for annotations (eg: @Service, @Repository etc) -->
+  <!-- Scan classpath for annotations (eg: @Service, @Repository etc) -->
 	<context:component-scan base-package="ua.igororlov92.chessapp" />
  
 	<bean
@@ -30,10 +33,15 @@
  	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources/ directory -->
  	<mvc:resources mapping="/resources/**" location="/resources/" />
  
-    <!-- Imports user-defined @Controller beans that process client requests. Only user for redirecting from / to /home.-->
+  <!-- Imports user-defined @Controller beans that process client requests. Only user for redirecting from / to /home.-->
 	<beans:import resource="controllers.xml" />
-    
-    <!-- TODO: Startup jobs.  -->
-    <!-- <bean class="no.cloudware.tibet.util.StartupJob" init-method="execute" /> -->
-    
+  
+  <mvc:interceptors>
+    <!-- Changes the locale when a 'locale' request parameter is sent; e.g. /?locale=de -->
+    <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+  </mvc:interceptors>
+  
+  <!-- Startup jobs.  -->
+  <bean class="ua.igororlov92.chessapp.util.StartupJob" init-method="execute" />
+  
 </beans>

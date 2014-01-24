@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+  <!-- 
+    Development persistence unit. Not used in production!
+    -->
+  <persistence-unit name="developmentPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <properties>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+
+<!--       <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+      <property name="hibernate.hbm2ddl.auto" value="update" />
+<!--       <property name="hibernate.hbm2ddl.auto" value="validate"/> -->
+
+      <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" />
+      <property name="hibernate.connection.charSet" value="UTF-8" />
+
+      <property name="hibernate.jdbc.batch_size" value="20"/>
+      <property name="hibernate.id.new_generator_mappings" value="true"/>
+
+      <!-- Searching. -->
+      <property name="hibernate.search.default.directory_provider" value="filesystem"/>
+      <!-- NO Lucene at the moment.
+      <property name="hibernate.search.default.indexBase" value="./lucene/indexes"/>
+      -->
+    
+    </properties>
+  </persistence-unit>
+
+
+</persistence>

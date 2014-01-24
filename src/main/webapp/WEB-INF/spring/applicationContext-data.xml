@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+  xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+    http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.1.xsd
+    ">
+
+  <!-- DB connection parameters (port, DB name etc.) -->
+  <import resource="datasource-dev.xml" />
+
+  <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
+    <property name="entityManagerFactory" ref="entityManagerFactory" />
+  </bean>
+
+  <tx:annotation-driven mode="proxy" transaction-manager="transactionManager" />
+
+  <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
+    <property name="dataSource" ref="dataSource" />
+    <property name="persistenceXmlLocation" value="/WEB-INF/persistence.xml" />
+    <property name="persistenceUnitName" value="developmentPersistenceUnit" />
+  </bean>
+
+  <jpa:repositories base-package="ua.igororlov92.chessapp.repositories" transaction-manager-ref="transactionManager" entity-manager-factory-ref="entityManagerFactory" />
+
+  
+  <!-- What is this for?
+  <jpa:auditing auditor-aware-ref="tibetAuditorAware" />
+  <bean id="tibetAuditorAware" class="no.cloudware.tibet.security.TibetAuditorAware" />
+  -->
+  
+</beans>
