@@ -26,7 +26,7 @@ public class InitialStartupService {
 		
 		logger.debug("Creating default event.");
 		
-		if (eventRepository.count() == 0) {
+		/*if (eventRepository.count() == 0) {
 			Event event = new Event();
 			event.setName("Test event 1");
 			event.setDescription("Some test description 1");
@@ -37,7 +37,7 @@ public class InitialStartupService {
 			event2.setDescription("Some test description 2");
 			eventRepository.save(event2);
 		}
-		
+		*/
 		if (userAccountRepository.count() == 0) {
 			UserAccount userAccount1 = new UserAccount();
 			userAccount1.setFirstName("Igor");
