@@ -1,16 +1,11 @@
 package ua.igororlov92.chessapp.model;
 
-import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -50,19 +45,13 @@ public class Event extends BaseEntity {
 	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
 	private DateTime endTime;
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "event_form_field", joinColumns = { 
-			@JoinColumn(name = "id", nullable = false, updatable = false) }, 
-			inverseJoinColumns = { @JoinColumn(name = "id", 
-					nullable = false, updatable = false) })
-	private Set<FormField> formFields = new HashSet<FormField>(0);
-	
 	@NotNull
 	private Boolean withGroups;
 
-
-	/*@NotNull
-	private School school;*/
+	@ManyToMany(fetch = FetchType.LAZY)
+	private Set<FormField> formFields;
+	
+	// TODO schools?
 	
 	public String getName() {
 		return name;
@@ -128,14 +117,6 @@ public class Event extends BaseEntity {
 		this.endTime = endTime;
 	}
 
-	public Set<FormField> getFormFields() {
-		return formFields;
-	}
-
-	public void setFormFields(Set<FormField> formFields) {
-		this.formFields = formFields;
-	}
-
 	public Boolean getWithGroups() {
 		return withGroups;
 	}
@@ -143,5 +124,14 @@ public class Event extends BaseEntity {
 	public void setWithGroups(Boolean withGroups) {
 		this.withGroups = withGroups;
 	}
+
+	public Set<FormField> getFormFields() {
+		return formFields;
+	}
+
+	public void setFormFields(Set<FormField> formFields) {
+		this.formFields = formFields;
+	}
+	
 	
 }

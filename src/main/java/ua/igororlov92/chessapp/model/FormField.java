@@ -1,14 +1,14 @@
 package ua.igororlov92.chessapp.model;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 import ua.igororlov92.chessapp.model.base.BaseEntity;
 
+@Entity
+@Table(name = "form_field", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
 public class FormField extends BaseEntity {
 	
 	public enum FormFieldType {
@@ -28,9 +28,7 @@ public class FormField extends BaseEntity {
 	
 	@NotNull
 	private Boolean required;
-	
-	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "formFields")
-	private Set<Event> events = new HashSet<Event>(0);
+
 	
 	public FormFieldType getFormFieldType() {
 		return formFieldType;
@@ -56,11 +54,4 @@ public class FormField extends BaseEntity {
 		this.required = required;
 	}
 
-	public Set<Event> getEvents() {
-		return events;
-	}
-
-	public void setEvents(Set<Event> events) {
-		this.events = events;
-	}
 }
