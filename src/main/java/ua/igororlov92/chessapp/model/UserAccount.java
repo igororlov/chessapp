@@ -27,6 +27,13 @@ public class UserAccount extends BaseEntity {
 	@NotNull
 	private String email;
 	
+	@NotNull
+	private String encryptedPassword;
+	
+	private String mobileNumber;
+	
+	private String address;
+	
 	// TODO avatar (cloudfile)
 	// TODO role enum
 	
@@ -60,6 +67,30 @@ public class UserAccount extends BaseEntity {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getEncryptedPassword() {
+		return encryptedPassword;
+	}
+
+	public void setEncryptedPassword(String encryptedPassword) {
+		this.encryptedPassword = encryptedPassword;
+	}
+
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
 	

@@ -13,7 +13,7 @@
                           <img src="http://placehold.it/380x500" alt="" class="img-rounded img-responsive" />
                       </div>
                       <div class="col-sm-6 col-md-8">
-                          <h3>Igor Orlov</h3>
+                          <h3>${userAccount.firstName} ${userAccount.lastName}</h3>
                           
                           <cite title="Oslo, Norway">Oslo, Norway <i class="fa fa-map-marker"></i>
                           </cite>
@@ -21,9 +21,9 @@
                           <hr />
                           
                           <p>
-                              <i class="fa fa-envelope-o"></i> email@example.com <br />
-                              <i class="fa fa-gift"></i> July 18, 1992 <br />
-                              <i class="fa fa-facebook-square"></i> <a href="https://www.facebook.com" target="_blank">On Facebook </a>
+                              <i class="fa fa-envelope-o"></i> ${userAccount.email} <br />
+                              <i class="fa fa-phone"></i> ${userAccount.mobileNumber} <br />
+                              <i class="fa fa-gift"></i> ${userAccount.birthDate} <br />
                           </p>
                         
                       </div>

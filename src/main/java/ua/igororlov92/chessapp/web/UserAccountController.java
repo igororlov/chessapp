@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ua.igororlov92.chessapp.model.Event;
 import ua.igororlov92.chessapp.model.UserAccount;
+import ua.igororlov92.chessapp.repositories.UserAccountRepository;
 import ua.igororlov92.chessapp.services.UserAccountService;
 
 @Controller
@@ -21,6 +22,9 @@ public class UserAccountController {
 	
 	@Autowired
 	private UserAccountService userAccountService;
+	
+	@Autowired
+	private UserAccountRepository userAccountRepository;
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserAccountController.class);
 	
@@ -37,9 +41,15 @@ public class UserAccountController {
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
-	public String getOneUserPage(@PathVariable("id") Long id) {
-		logger.info("Inside one user page: " + id);
-		return "oneUser"; // TODO rename  
+	public ModelAndView getOneUserPage(@PathVariable("id") Long id) {
+		
+		UserAccount userAccount = userAccountRepository.findOne(id);
+		
+		logger.info("Inside page of " + userAccount.getFirstName() + " " + userAccount.getLastName());
+		ModelAndView modelAndView = new ModelAndView("oneUser");
+		modelAndView.addObject("userAccount", userAccount);
+		
+		return modelAndView;
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
