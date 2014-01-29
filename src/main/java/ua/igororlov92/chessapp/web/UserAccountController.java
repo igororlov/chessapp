@@ -31,7 +31,6 @@ public class UserAccountController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView getUsersPage() {
 		
-		logger.info("Inside users page");
 		ModelAndView modelAndView = new ModelAndView("users");
 		
 		List<UserAccount> userAccounts = userAccountService.testGetUserAccounts();
@@ -45,7 +44,6 @@ public class UserAccountController {
 		
 		UserAccount userAccount = userAccountRepository.findOne(id);
 		
-		logger.info("Inside page of " + userAccount.getFirstName() + " " + userAccount.getLastName());
 		ModelAndView modelAndView = new ModelAndView("oneUser");
 		modelAndView.addObject("userAccount", userAccount);
 		
@@ -54,7 +52,7 @@ public class UserAccountController {
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
 	public void deleteOneUserPage(@PathVariable("id") Long id) {
-		logger.info("Inside delete user page " + id);
+		logger.debug("Inside delete user page " + id);
 	}
 	
 }

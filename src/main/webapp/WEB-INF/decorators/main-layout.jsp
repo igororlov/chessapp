@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
+<%@taglib prefix="joda" uri="http://www.joda.org/joda/time/tags" %>
 
 <!DOCTYPE html>
 <html lang="en">

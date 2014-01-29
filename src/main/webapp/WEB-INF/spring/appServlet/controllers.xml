@@ -10,6 +10,6 @@
 	<context:component-scan base-package="org.springframework.samples.mvc" />
 
 	<!--Routes -->
-	<mvc:view-controller path="/" view-name="home"/>
-
+  <mvc:view-controller path="/" view-name="redirect:/home" />
+  
 </beans>

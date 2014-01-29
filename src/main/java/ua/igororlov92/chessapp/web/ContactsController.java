@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/contacts")
 public class ContactsController {
 	
+	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(ContactsController.class);
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String getContactsPage() {
-		logger.info("Inside contacts page");
 		return "contacts"; 
 	}
 }

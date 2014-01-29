@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration scan="true" scanPeriod="15 seconds">
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level %logger - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="ua.igororlov92" level="DEBUG" />
+
+  <logger name="org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver" level="DEBUG"/>
+
+  
+  <logger name="com.mangofactory.swagger" level="ERROR" />
+
+
+  <!-- About Hibernate logging:
+
+          org.hibernate.SQL           Log all SQL DML statements as they are executed
+          org.hibernate.type          Log all JDBC parameters (level needs to be TRACE, as this creates a lot of lines)
+          org.hibernate.tool.hbm2ddl  Log all SQL DDL statements as they are executed
+          org.hibernate.pretty        Log the state of all entities (max 20 entities) associated with the session at flush time
+          org.hibernate.cache         Log all second-level cache activity
+          org.hibernate.transaction   Log transaction related activity
+          org.hibernate.jdbc          Log all JDBC resource acquisition
+          org.hibernate.hql.ast.AST   Log HQL and SQL ASTs during query parsing
+          org.hibernate.secure        Log all JAAS authorization requests
+          org.hibernate               Log everything (a lot of information, but very useful for troubleshooting)
+   -->
+
+<!--      <logger name="org.hibernate" level="DEBUG"/> -->
+<!--   <logger name="org.hibernate.SQL" level="DEBUG"/> -->
+<!--   <logger name="org.hibernate.type" level="TRACE"/> -->
+
+
+  <!-- Security. -->
+
+  <!-- Uncomment next line to see login events. -->
+  <!-- <logger name="org.springframework.security.authentication.event.LoggerListener" level="WARN" /> -->
+
+
+
+  <!-- By setting mvcWarnings to WARN (or lower), stack traces thrown in a web context will show up in the logs.  -->
+  <logger name="mvcWarnings" level="WARN" />
+
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>
