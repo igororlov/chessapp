@@ -39,7 +39,6 @@
             </div>
           </div>
 
-          <hr class="soften">
     </div>
 
     <c:import url="/WEB-INF/views/tags/footer.jsp"/>

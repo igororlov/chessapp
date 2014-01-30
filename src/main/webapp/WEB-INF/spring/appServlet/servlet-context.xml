@@ -21,6 +21,9 @@
   <!-- Enable @Controller annotation support -->
 	<mvc:annotation-driven />
  
+  <mvc:resources mapping="/favicon.ico" location="/resources/img/favicon.ico" />
+  
+ 
   <!-- Scan classpath for annotations (eg: @Service, @Repository etc) -->
 	<context:component-scan base-package="ua.igororlov92.chessapp" />
  

@@ -48,7 +48,7 @@ public class Event extends BaseEntity {
 	@NotNull
 	private Boolean withGroups;
 
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.EAGER)
 	private Set<FormField> formFields;
 	
 	// TODO schools?

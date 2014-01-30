@@ -12,8 +12,8 @@ body {
 }
 
 body{
-  background-size: 50% 50%;
-  background-image: url(./../img/fresh_snow_2X.png);
+  background-size: 20% 20%;
+  background-image: url(./../img/purty_wood_2X.png);
   background-repeat:repeat;
 }
 
@@ -30,8 +30,9 @@ body{
 
 /* Set the fixed height of the footer here */
 #footer {
-  height: 60px;
-  background-color: #f5f5f5;
+  # margin-right: 30px
+  # height: 30px;
+  # background-color: #f5f5f5;
 }
 
 #wrap > .container {
@@ -57,4 +58,17 @@ body{
     background: #f00 url(./../img/chess.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
+}
+
+.well {
+    background-color: #eee;
+}
+
+h1 {
+    padding: 11px 16px;
+    margin: 0;
+}
+
+textarea { 
+  resize:vertical; 
 }

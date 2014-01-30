@@ -70,9 +70,12 @@ public class EventsController {
 	}
 	
 	@RequestMapping(value="/{id}/register", method = RequestMethod.GET)
-	public ModelAndView getOneEventRegisterForm() {
+	public ModelAndView getOneEventRegisterForm(@PathVariable("id") Long id) {
 
 		ModelAndView modelAndView = new ModelAndView(eventsViewsFolder + "registerForEvent");
+		
+		Event event = eventRepository.findOne(id);
+		modelAndView.addObject("event", event);
 		
 		return modelAndView;
 	}
