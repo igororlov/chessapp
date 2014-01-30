@@ -3,7 +3,7 @@
 
 <h1> Events </h1>
 
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover table-bordered">
   <c:forEach items="${events}" var="event">
     <joda:format var="startTime" value="${event.startTime}" pattern="dd/MM/yyyy HH:mm" style="F-" dateTimeZone="Europe/Oslo"/>
     <joda:format var="deadlineTime" value="${event.deadlineTime}" pattern="dd/MM/yyyy HH:mm" style="F-" dateTimeZone="Europe/Oslo"/>

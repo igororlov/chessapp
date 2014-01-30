@@ -18,11 +18,10 @@ public class UserAccountService {
 	@Autowired
 	private UserAccountRepository userAccountRepository;
 	
+	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(UserAccountService.class);
 	
 	public List<UserAccount> testGetUserAccounts() {
-		
-		logger.debug("Inside UserAccount Service");
 		
 		List<UserAccount> userAccounts = new ArrayList<UserAccount>();
 		for (UserAccount userAccount : userAccountRepository.findAll()) {

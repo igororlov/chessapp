@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<c:url value="/" />">Chess event</a>
+      <a class="navbar-brand" href="<c:url value="/" />"><i class="fa fa-check-square-o"></i> Chess event</a>
     </div>
         
     <div class="navbar-collapse collapse">  
