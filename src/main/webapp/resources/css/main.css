@@ -46,3 +46,10 @@ body {
 .sidebar-nav {
     padding: 9px 0;
 }
+
+.jumbotron {
+    color: white;
+    background: #f00 url(./../img/chess.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

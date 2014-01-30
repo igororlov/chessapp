@@ -262,6 +262,19 @@
       <version>1.4.7</version>
     </dependency>
 	
+    <!-- Auto-generate Swagger documentation for documenting the JSON API. -->
+    <dependency>
+      <groupId>com.mangofactory</groupId>
+      <artifactId>swagger-springmvc</artifactId>
+      <version>0.6.5</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  
   </dependencies>
   
   

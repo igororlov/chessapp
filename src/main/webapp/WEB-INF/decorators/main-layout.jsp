@@ -23,25 +23,21 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
-                  <div class="well sidebar-nav">
-                    <c:import url="/WEB-INF/views/tags/menu.jsp"/>
-                  </div>
-                </div>
-
-                <div class="col-md-10">
+                
+                <!-- col-md-10 -->
+                <div class="col-md-10 col-md-offset-1">
                     
-
                     <div class="row">
                       <div class="col-md-12">
                         
                         <decorator:body />
 
                       </div>
-                    </div><!--/col-->
-                </div><!--/row-->
-            </div><!--/col-->
-          </div><!--/row-->
+                    </div>
+                </div>
+                
+            </div>
+          </div>
 
           <hr class="soften">
     </div>

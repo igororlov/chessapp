@@ -12,10 +12,10 @@
         
     <div class="navbar-collapse collapse">  
       <ul class="nav navbar-nav">
-        <li class="active"><a href="<c:url value="/" />">Home</a></li>
-        <li><a href="<c:url value="/events" />">Events</a></li>
-        <li><a href="<c:url value="/users" />">Users</a></li>
-        <li><a href="<c:url value="/contacts" />">Contacts</a></li>
+        <li> <a href="<c:url value="/home" />">Home</a></li>
+        <li> <a href="<c:url value="/events" />">Events</a></li>
+        <li> <a href="<c:url value="/users" />">Users</a></li>
+        <li> <a href="<c:url value="/contacts" />">Contacts</a></li>
       </ul>
    
       <form class="navbar-form navbar-right" role="form">
@@ -29,6 +29,6 @@
         <button type="submit" class="btn btn-primary">Sign up</button>
       </form>
     </div><!--/.navbar-collapse -->
-        
+       
   </div>
 </div>
