@@ -17,6 +17,13 @@ body{
   background-repeat:repeat;
 }
 
+.jumbotron {
+    color: white;
+    background: #f00 url(./../img/chess.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
@@ -51,13 +58,6 @@ body{
 
 .sidebar-nav {
     padding: 9px 0;
-}
-
-.jumbotron {
-    color: white;
-    background: #f00 url(./../img/chess.jpg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
 }
 
 .well {

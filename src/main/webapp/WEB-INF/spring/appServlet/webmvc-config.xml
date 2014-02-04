@@ -21,11 +21,10 @@
   <!-- Enable @Controller annotation support -->
 	<mvc:annotation-driven />
  
-  <mvc:resources mapping="/favicon.ico" location="/resources/img/favicon.ico" />
-  
- 
   <!-- Scan classpath for annotations (eg: @Service, @Repository etc) -->
-	<context:component-scan base-package="ua.igororlov92.chessapp" />
+	<context:component-scan base-package="ua.igororlov92.chessapp" use-default-filters="false">
+    <context:include-filter expression="org.springframework.stereotype.Controller" type="annotation" />
+  </context:component-scan>
  
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

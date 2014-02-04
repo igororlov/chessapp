@@ -33,7 +33,7 @@
         </property>
   </bean>
   
-  <context:component-scan base-package="no.cloudware.tibet" scoped-proxy="targetClass">
+  <context:component-scan base-package="ua.igororlov92.chessapp" scoped-proxy="targetClass">
     <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation" />
     <context:exclude-filter type="regex" expression="ua.igororlov92.chessapp.api.*"/>
   </context:component-scan>

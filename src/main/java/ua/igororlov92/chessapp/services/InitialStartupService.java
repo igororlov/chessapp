@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 
 import ua.igororlov92.chessapp.model.Event;
 import ua.igororlov92.chessapp.model.FormField;
-import ua.igororlov92.chessapp.model.FormField.FormFieldType;
 import ua.igororlov92.chessapp.model.FormFieldAlternative;
 import ua.igororlov92.chessapp.model.UserAccount;
+import ua.igororlov92.chessapp.model.dto.FormFieldDto.FormFieldType;
 import ua.igororlov92.chessapp.repositories.EventRepository;
 import ua.igororlov92.chessapp.repositories.FormFieldAlternativeRepository;
 import ua.igororlov92.chessapp.repositories.FormFieldRepository;

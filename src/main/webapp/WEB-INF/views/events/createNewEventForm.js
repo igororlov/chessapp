@@ -1,8 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-  <script type="text/javascript">
-    $.getJSON( "http://localhost:8080/chessapp/api/formFieldsApi/getAllAsDto", function( data ) {      
+$.getJSON( "http://localhost:8080/chessapp/api/formFieldsApi/getAllAsDto", function( data ) {      
       
       var formFields = [];
       
@@ -62,16 +58,3 @@
       } 
       
     });
-  </script>
-
-
-<h1>Create new event</h1>
-
-<hr class="soften">
-
-<div class="col-sm-6 well">
-  <form:form id="myForm" role="form">
-     
-  </form:form>
-</div>
-

@@ -1,26 +1,21 @@
 package ua.igororlov92.chessapp.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 import ua.igororlov92.chessapp.model.base.BaseEntity;
+import ua.igororlov92.chessapp.model.dto.FormFieldDto.FormFieldType;
 
 @Entity
 @Table(name = "form_field", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
 public class FormField extends BaseEntity {
 	
-	public enum FormFieldType {
-		bool,
-		string,
-		date,
-		integer,
-		decimal,
-		stringAlternative
-	}
-	
 	@NotNull
+	@Enumerated(EnumType.STRING)
 	private FormFieldType formFieldType;
 	
 	@NotNull

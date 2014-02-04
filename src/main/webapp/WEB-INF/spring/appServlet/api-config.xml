@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p" xmlns:cache="http://www.springframework.org/schema/cache"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+                http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
+
+  <context:property-placeholder location="classpath*:META-INF/config.properties" />  
+
+  <!-- The controllers are autodetected POJOs labeled with the @Controller annotation. -->
+  <context:component-scan base-package="ua.igororlov92.chessapp.api" use-default-filters="false">
+    <context:include-filter expression="org.springframework.stereotype.Controller" type="annotation" />
+  </context:component-scan>
+
+
+  <!-- Turns on support for mapping requests to Spring MVC @Controller methods Also registers default Formatters and Validators for use across all @Controllers -->
+  <mvc:annotation-driven conversion-service="conversionService" content-negotiation-manager="contentNegotiationManager">
+    <mvc:message-converters>
+      <bean class="org.springframework.http.converter.StringHttpMessageConverter" />
+      <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="objectMapper" ref="customObjectMapper" />
+      </bean>
+    </mvc:message-converters>
+
+    <mvc:argument-resolvers>
+      <bean class="org.springframework.data.web.PageableHandlerMethodArgumentResolver" />
+    </mvc:argument-resolvers>
+  </mvc:annotation-driven>
+
+  <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+   
+    <property name="formatters">
+      <set>
+        <bean class="org.springframework.format.number.NumberFormatAnnotationFormatterFactory" />
+      </set>
+    </property>
+    
+    <property name="formatterRegistrars">
+      <set>
+        <bean class="org.springframework.format.datetime.joda.JodaTimeFormatterRegistrar">
+          <property name="dateFormatter">
+            <bean class="org.springframework.format.datetime.joda.DateTimeFormatterFactoryBean">
+              <property name="pattern" value="yyyy-MM-dd" />
+            </bean>
+          </property>
+        </bean>
+      </set>
+    </property>
+    
+  </bean>
+
+	<bean id="contentNegotiationManager"
+		class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+		<property name="favorPathExtension" value="true" />
+		<property name="favorParameter" value="true" />
+		<property name="parameterName" value="mediaType" />
+		<property name="useJaf" value="false" />
+		<property name="defaultContentType" value="application/json" />
+
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+				<entry key="xml" value="application/xml" />
+				<entry key="pdf" value="application/pdf" />
+				<entry key="ubl" value="application/vnd.tb.ubl+xml" />
+				<entry key="png" value="image/png" />
+			</map>
+		</property>
+	</bean>
+  
+  
+
+  <!-- Enable Swagger documentation generation for the API. -->
+  <bean id="documentationConfig" class="com.mangofactory.swagger.configuration.DocumentationConfig"/>
+  
+  <!-- Static documentation pages (Swagger), that are used to read the API. -->
+<!-- 
+ -->
+  <mvc:view-controller path="/docs" view-name="redirect:./docs/" />
+  <mvc:view-controller path="/docs/" view-name="forward:./index.html" />
+  <mvc:resources mapping="/docs/**" location="/WEB-INF/swagger/" />
+  
+</beans>
