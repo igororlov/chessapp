@@ -1,6 +1,6 @@
 package ua.igororlov92.chessapp.model;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -49,7 +49,7 @@ public class Event extends BaseEntity {
 	private Boolean withGroups;
 
 	@ManyToMany(fetch = FetchType.EAGER)
-	private Set<FormField> formFields;
+	private List<FormField> formFields;
 	
 	// TODO schools?
 	
@@ -125,11 +125,11 @@ public class Event extends BaseEntity {
 		this.withGroups = withGroups;
 	}
 
-	public Set<FormField> getFormFields() {
+	public List<FormField> getFormFields() {
 		return formFields;
 	}
 
-	public void setFormFields(Set<FormField> formFields) {
+	public void setFormFields(List<FormField> formFields) {
 		this.formFields = formFields;
 	}
 	

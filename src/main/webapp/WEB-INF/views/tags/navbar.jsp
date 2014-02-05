@@ -7,12 +7,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<c:url value="/" />"><i class="fa fa-check-square-o"></i> Chess event</a>
+      <a class="navbar-brand" href="<c:url value="/home" />"><i class="fa fa-check-square-o"></i> Chess event</a>
     </div>
         
     <div class="navbar-collapse collapse">  
       <ul class="nav navbar-nav">
-        <li> <a href="<c:url value="/home" />">Home</a></li>
+        <!-- <li> <a href="<c:url value="/home" />">Home</a></li> -->
         <li> <a href="<c:url value="/events" />">Events</a></li>
         <li> <a href="<c:url value="/users" />">Users</a></li>
         <li> <a href="<c:url value="/contacts" />">Contacts</a></li>

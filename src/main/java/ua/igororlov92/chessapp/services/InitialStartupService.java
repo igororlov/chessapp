@@ -1,7 +1,7 @@
 package ua.igororlov92.chessapp.services;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
@@ -61,6 +61,14 @@ public class InitialStartupService {
 	
 	private void createDefaultFormFields() {
 		
+		// Email
+		FormField emailField = new FormField();
+		emailField.setFormFieldType(FormFieldType.string);
+		emailField.setName("Email");
+		emailField.setRequired(true);
+		formFieldRepository.save(emailField);
+		
+		
 		// First name
 		FormField firstNameField = new FormField();
 		firstNameField.setFormFieldType(FormFieldType.string);
@@ -88,14 +96,7 @@ public class InitialStartupService {
 		parentNameField.setName("Parent's name");
 		parentNameField.setRequired(false);
 		formFieldRepository.save(parentNameField);
-		
-		// Email
-		FormField emailField = new FormField();
-		emailField.setFormFieldType(FormFieldType.string);
-		emailField.setName("Email");
-		emailField.setRequired(true);
-		formFieldRepository.save(emailField);
-		
+
 		// Address
 		FormField addressField = new FormField();
 		addressField.setFormFieldType(FormFieldType.string);
@@ -144,7 +145,7 @@ public class InitialStartupService {
 		event.setPlace("Oslo, Nedre Ullevål 7, H503");
 		event.setWithGroups(false);
 		
-		Set<FormField> formFields = new HashSet<FormField>();
+		List<FormField> formFields = new ArrayList<>();
 		formFields.add(formFieldRepository.findByName("First name"));
 		formFields.add(formFieldRepository.findByName("Last name"));
 		formFields.add(formFieldRepository.findByName("Email"));

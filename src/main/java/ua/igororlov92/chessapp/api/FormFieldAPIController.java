@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import ua.igororlov92.chessapp.model.FormField;
 import ua.igororlov92.chessapp.model.dto.FormFieldDto.ReadFormFieldDto;
+import ua.igororlov92.chessapp.model.dto.helpers.FormFieldHelper;
 import ua.igororlov92.chessapp.repositories.FormFieldRepository;
 
 @Controller
@@ -22,6 +23,9 @@ public class FormFieldAPIController {
 	@Autowired
 	private FormFieldRepository formFieldRepository;
 
+	@Autowired
+	private FormFieldHelper formFieldHelper;
+	
 	private static final Logger logger = LoggerFactory.getLogger(FormFieldAPIController.class);
 	
 	@RequestMapping(value="/getAllAsDto", method = RequestMethod.GET)
@@ -31,20 +35,11 @@ public class FormFieldAPIController {
 		List<ReadFormFieldDto> formFieldDtos = new ArrayList<>();
 		
 		for (FormField formField : formFields) {
-			formFieldDtos.add(toDto(formField));
+			formFieldDtos.add(formFieldHelper.toDto(formField));
 		}
 		
 		return formFieldDtos;
 	}
 	
-	private ReadFormFieldDto toDto(FormField entity) {
-		
-		ReadFormFieldDto dto = new ReadFormFieldDto();
-		dto.id = entity.getId();
-		dto.formFieldType = entity.getFormFieldType();
-		dto.name = entity.getName();
-		dto.required = entity.getRequired();
-		
-		return dto;
-	}
+	
 }

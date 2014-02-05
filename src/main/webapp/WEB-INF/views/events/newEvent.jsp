@@ -1,4 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script type="text/javascript">
@@ -24,11 +24,12 @@
     });
   </script>
 
-<h1>Create new event</h1>
+<div class="col-md-8 col-md-offset-2">
+  <h1 class="text-center"> Create new event </h1>
+  <hr class="soften">
+</div>
 
-<hr class="soften">
-
-<div class="col-sm-6 well">
+<div class="col-md-6 col-md-offset-3 well">
   <form:form role="form">
     <form:form role="form">
     

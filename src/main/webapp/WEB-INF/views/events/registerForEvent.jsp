@@ -1,8 +1,11 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script type="text/javascript">
-    $.getJSON( "http://localhost:8080/chessapp/api/formFieldsApi/getAllAsDto", function( data ) {      
+    var id = ${event.id};
+    var url = "http://localhost:8080/chessapp/api/eventsApi/" + id + "/formFields";
+    
+    $.getJSON( url, function( data ) {      
       
       var formFields = [];
       
@@ -64,11 +67,12 @@
     });
   </script>
 
-<h1>Registrating for ${event.name}</h1>
+<div class="col-md-8 col-md-offset-2">
+  <h1 class="text-center"> Registrating for <a href=".">${event.name}</a> </h1>
+  <hr class="soften">
+</div>
 
-<hr class="soften">
-
-<div class="col-sm-6 well">
+<div class="col-md-6 col-md-offset-3 well">
   <form:form id="myForm" role="form">
     
   </form:form>
