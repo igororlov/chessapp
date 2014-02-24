@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ua.igororlov92.chessapp.model.Event;
-import ua.igororlov92.chessapp.model.FormField;
 import ua.igororlov92.chessapp.model.dto.EventDto.CreateEventDto;
 import ua.igororlov92.chessapp.model.dto.EventDto.ReadEventDto;
 import ua.igororlov92.chessapp.model.dto.FormFieldDto.ReadFormFieldDto;

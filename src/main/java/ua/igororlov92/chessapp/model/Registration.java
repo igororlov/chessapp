@@ -1,8 +1,11 @@
 package ua.igororlov92.chessapp.model;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -16,16 +19,25 @@ import ua.igororlov92.chessapp.model.base.BaseEntity;
 public class Registration extends BaseEntity {
 	
 	@NotNull
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Event event;
 	
 	@NotNull
 	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
 	private DateTime registeredTime;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@NotNull
+	private String fullName;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
 	private UserAccount userAccount;
 
+	@OneToMany(mappedBy = "registration")
+	private Set<FilledFormField> filledFormFields;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Group group;
+	
 	public Event getEvent() {
 		return event;
 	}
@@ -48,6 +60,14 @@ public class Registration extends BaseEntity {
 
 	public void setUserAccount(UserAccount userAccount) {
 		this.userAccount = userAccount;
+	}
+
+	public Set<FilledFormField> getFilledFormFields() {
+		return filledFormFields;
+	}
+
+	public void setFilledFormFields(Set<FilledFormField> filledFormFields) {
+		this.filledFormFields = filledFormFields;
 	}
 	
 	
