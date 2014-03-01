@@ -36,7 +36,7 @@ public class Registration extends BaseEntity {
 	private Set<FilledFormField> filledFormFields;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	private Group group;
+	private EventGroup eventGroup;
 	
 	public Event getEvent() {
 		return event;
@@ -69,6 +69,21 @@ public class Registration extends BaseEntity {
 	public void setFilledFormFields(Set<FilledFormField> filledFormFields) {
 		this.filledFormFields = filledFormFields;
 	}
-	
-	
+
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public EventGroup getEventGroup() {
+		return eventGroup;
+	}
+
+	public void setEventGroup(EventGroup eventGroup) {
+		this.eventGroup = eventGroup;
+	}
+
 }

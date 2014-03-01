@@ -51,8 +51,6 @@ public class Event extends BaseEntity {
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<FormField> formFields;
 	
-	// TODO schools?
-	
 	public String getName() {
 		return name;
 	}
