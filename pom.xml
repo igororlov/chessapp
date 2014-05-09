@@ -21,6 +21,9 @@
     
     <maven.compiler.source>1.7</maven.compiler.source>
   	<maven.compiler.target>1.7</maven.compiler.target>
+
+	<!-- LATEST: http://search.maven.org/#search|ga|1|g%3A%22ro.isdc.wro4j%22%20AND%20a%3A%22wro4j-core%22 -->
+    <wro4j.version>1.7.4</wro4j.version>
     
   </properties>
   
@@ -301,7 +304,38 @@
         </exclusion>
       </exclusions>
     </dependency>
-  
+    
+    <!-- wro4j -->
+    <dependency>
+      <groupId>ro.isdc.wro4j</groupId>
+      <artifactId>wro4j-core</artifactId>
+      <version>${wro4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ro.isdc.wro4j</groupId>
+      <artifactId>wro4j-extensions</artifactId>
+      <version>${wro4j.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <artifactId>jruby-core</artifactId>
+          <groupId>org.jruby</groupId>
+        </exclusion>
+
+        <exclusion>
+          <artifactId>emberjs</artifactId>
+          <groupId>org.webjars</groupId>
+        </exclusion>
+
+        <!-- <exclusion> <artifactId>jffi</artifactId> <groupId>org.jruby.extras</groupId> </exclusion> -->
+      </exclusions>
+    </dependency>
+    
   </dependencies>
   
   

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import ua.igororlov92.chessapp.model.Event;
 import ua.igororlov92.chessapp.model.UserAccount;
 import ua.igororlov92.chessapp.repositories.UserAccountRepository;
 import ua.igororlov92.chessapp.services.UserAccountService;

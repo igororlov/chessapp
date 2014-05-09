@@ -1,6 +1,5 @@
 package ua.igororlov92.chessapp.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -18,6 +17,7 @@ public class EventService {
 	@Autowired
 	private EventRepository eventRepository;
 	
+	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(EventService.class);
 	
 	public List<Event> getAllFutureEvents() {

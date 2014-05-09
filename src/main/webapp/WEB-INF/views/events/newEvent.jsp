@@ -1,4 +1,4 @@
-﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script type="text/javascript">
@@ -31,8 +31,6 @@
 
 <div class="col-md-6 col-md-offset-3 well">
   <form:form role="form">
-    <form:form role="form">
-    
     <div class="form-group">
       <label>Name</label>
       <input type="text" class="form-control" placeholder="Text input">

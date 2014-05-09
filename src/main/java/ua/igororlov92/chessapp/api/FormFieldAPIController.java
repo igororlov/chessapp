@@ -26,6 +26,7 @@ public class FormFieldAPIController {
 	@Autowired
 	private FormFieldHelper formFieldHelper;
 	
+	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(FormFieldAPIController.class);
 	
 	@RequestMapping(value="/getAllAsDto", method = RequestMethod.GET)
